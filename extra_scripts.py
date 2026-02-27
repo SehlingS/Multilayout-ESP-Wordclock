@@ -44,6 +44,9 @@ env.Command(
     action=build_version_h
 )
 
+# #
+# # automatically build web page
+# #
 
 npm_ci = env.Command(
     target="node_modules/.package-lock.json",
@@ -61,23 +64,3 @@ grunt_build = env.Command(
 env.Depends(grunt_build, npm_ci)
 env.Depends(grunt_build, package_json)
 env.Depends(grunt_build, env.Glob("webpage/*"))
-
-
-# #
-# # automatically build web page
-# #
-
-# npm_ci = env.Command(
-#     target="node_modules/.package-lock.json",
-#     source="package-lock.json",
-#     action="npm ci --silent"
-# )
-
-# grunt_build = env.Command(
-#     target="include/WebPageContent.gen.inc",
-#     source="Gruntfile.js",
-#     action="PIO_ENV_NAME=$PIOENV npx --no-install grunt build"
-# )
-# env.Depends(grunt_build, npm_ci)
-# env.Depends(grunt_build, package_json)
-# env.Depends(grunt_build, env.Glob("webpage/*"))
