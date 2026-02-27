@@ -21,15 +21,22 @@
 
 class De10x11Nero_t : public iUhrType {
 public:
-    virtual LanguageAbbreviation usedLang() override {
-        return LanguageAbbreviation::DE;
-    };
 
     //------------------------------------------------------------------------------
 
     virtual const bool hasDreiviertel() override { return true; }
 
     //------------------------------------------------------------------------------
+
+    virtual const bool hasSpecialWordHappyBirthday() { return true; }
+
+    //------------------------------------------------------------------------------
+
+
+    virtual LanguageAbbreviation usedLang() override {
+        return LanguageAbbreviation::DE;
+    };
+
 
     void show(FrontWord word) override {
         switch (word) {

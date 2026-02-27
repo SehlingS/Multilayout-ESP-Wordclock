@@ -747,29 +747,8 @@ uint16_t Transition::transitionFire() {
         sparkle = false;
         subPhase = 1;
         firework->prepare(0, _white, FIRE_1, mirrored);
-        if (transitionType == BIRTHDAY &&
-            usedUhrType->hasSpecialWordHappyBirthday()) {
-            /*
-            On birthdays, a fireworks animation appears every 5 minutes.
-            Compatible clock types will display the words “Happy Birthday”
-            instead of the time during the animation. Birthdays before 1900 are
-            not animated.
-            */
-            fillMatrix(work, background);
-            HsbColor hsbColor = HsbColor(foreground);
-            hsbColor.H = pseudoRandomHue();
-
-            led.clear();
-            usedUhrType->show(FrontWord::happy_birthday);
-            led.setbyFrontMatrix(hsbColor);
-            analyzeColors(work, STRIPE, foreground, background);
-
-            copyMatrix(act, work);
-        } else {
-            // use current colors to be blended to act
-            copyMatrix(old, work);
-            copyMatrixFlags(work, act);
-        }
+        copyMatrix(old, work);
+        copyMatrixFlags(work, act);
         phase++;
     }
 

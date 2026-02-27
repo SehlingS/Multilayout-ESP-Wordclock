@@ -22,6 +22,13 @@
 
 class De11x11V3_t : public De11x11_t {
 public:
+
+    //------------------------------------------------------------------------------
+
+    virtual const bool hasSpecialWordHappyBirthday() { return true; }
+
+    //------------------------------------------------------------------------------
+    
     virtual const void getMinuteArray(uint16_t *returnArr,
                                       uint8_t col) override {
 
@@ -34,7 +41,7 @@ public:
         for (uint8_t i = 0; i < 4; i++) {
             switch (col) {
             case 0:                         // LEDs for "LED4x" minute display
-                returnArr[i] = 3 + (i * 2); // 3,5,7,9
+                returnArr[i] = 2 + (i * 2); // 3,5,7,9
                 break;
 
             case 1:                           // LEDs for "LED7x" minute display

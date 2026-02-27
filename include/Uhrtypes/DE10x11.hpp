@@ -31,6 +31,10 @@ public:
 
     //------------------------------------------------------------------------------
 
+     virtual const bool hasSpecialWordHappyBirthday() { return true; }
+
+    //------------------------------------------------------------------------------
+
     void show(FrontWord word) override {
         switch (word) {
 

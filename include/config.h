@@ -189,10 +189,10 @@
  * Valid values for DEFAULT_HUE [integer 0-255]
  * Valid values for DEFAULT_BRIGHTNESS [one of these: 0, 20, 40, 60, 80, 100]
  */
-#define DEFAULT_LEDTYPE Brg
+#define DEFAULT_LEDTYPE Grb
 #define WHITE_LEDTYPE WhiteType::NeutralWhite
 #define DEFAULT_HUE 120
-#define DEFAULT_BRIGHTNESS 100
+#define DEFAULT_BRIGHTNESS 60
 
 //--------------------------------------------------------------------------
 // Define Build Type
@@ -249,8 +249,8 @@
  * AUTOBRIGHT_LDR_RESDARK [number]
  * AUTOBRIGHT_LDR_RESDIVIDER [number]
  */
-#define AUTOBRIGHT_USE_BH1750 true
-#define AUTOBRIGHT_USE_LDR true
+#define AUTOBRIGHT_USE_BH1750 false
+#define AUTOBRIGHT_USE_LDR false
 
 #define AUTOBRIGHT_LDR_RESBRIGHT 15
 #define AUTOBRIGHT_LDR_RESDARK 1000
@@ -285,7 +285,7 @@
  *
  * Valid values [true, false]
  */
-#define GENERAL_VERBOSE true
+#define GENERAL_VERBOSE false
 #define WIFI_VERBOSE false
 #define WEATHER_VERBOSE false
 
@@ -303,7 +303,7 @@
  *
  */
 #define MANUAL_WIFI_SETTINGS false
-#define WIFI_SSID "WIFISSID"
+#define WIFI_SSID "SehlingWlan"
 #define WIFI_PASSWORD "Password"
 
 //--------------------------------------------------------------------------
@@ -321,9 +321,9 @@
  * Valid values CP_PASSWORD [Alphanumeric Letters]
  *
  */
-#define CP_PROTECTED false
+#define CP_PROTECTED true
 #define CP_SSID "Connect_to_Wordclock"
-#define CP_PASSWORD "CHANGE_THIS_PASSWORD"
+#define CP_PASSWORD "Wordclock"
 
 //--------------------------------------------------------------------------
 // Settings for Boot sequence
